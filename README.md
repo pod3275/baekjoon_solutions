@@ -3,6 +3,7 @@ baekjoon solutions
 
 ## Tips
 - *input()* 대신 *sys.stdin.readline()* 사용 (*import sys* 필요)
+- *print()* 대신 *sys.stdout.write()* 사용 (*import sys* 필요, 줄바꿈 없음)
 - *sys.stdin = open("a.txt", "r")*
   - 문제의 입력을 a.txt에 저장
 - 개행문자(\n) 제거
