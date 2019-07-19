@@ -31,7 +31,7 @@ for i in range(ord('a'),ord('z')+1):
     except:
         sys.stdout.write("-1 ")
         
-# 10809번 알파벳 찾기 - for문 26 - index대신 find 가능
+# 10809번 알파벳 찾기 - for문 26 - index 대신 find 가능
 import sys
 # sys.stdin = open("a.txt", "r")
 string = sys.stdin.readline().strip()
@@ -49,7 +49,7 @@ for idx, char in enumerate(string):
         answer[ord(char)-ord('a')] = idx
 print(" ".join(str(x) for x in answer))
 
-# 10809번 알파벳 찾기 - for문 len(string) - 최소 시간 달성 : range, enum은 느리다
+# 10809번 알파벳 찾기 - for문 len(string) - 최소 시간 달성 : range, enum은 메모리 비효율적임
 answer = [-1 for i in range(26)]
 string = input()
 i = 0
@@ -58,3 +58,11 @@ while i < len(string):
         answer[ord(string[i])-97] = i
     i += 1
 print(" ".join(str(x) for x in answer))
+
+
+# 1152번 단어의 개수 - empty string + specified split --> return ['']
+string = input().strip()
+if string=='':
+    print('0')
+else:
+    print(len(string.split(' ')))
