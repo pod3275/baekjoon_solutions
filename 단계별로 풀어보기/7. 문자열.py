@@ -66,3 +66,105 @@ if string=='':
     print('0')
 else:
     print(len(string.split(' ')))
+    
+    
+# 2675번 문자열 반복
+import sys
+# sys.stdin = open("a.txt.", "r")
+n = int(sys.stdin.readline())
+i=0
+while i != n:
+    r, string = map(str, sys.stdin.readline().split())
+    for char in string:
+        print(char* int(r), end="")
+    print("")
+    i+=1
+    
+    
+# 1157번 단어 공부
+import sys
+sys.stdin = open("a.txt", "r")
+string = sys.stdin.readline().strip()
+count_alpha = [0]*26
+for char in string:
+    count_alpha[ord(char.upper())-ord('A')] += 1
+ans = [i for i in range(len(count_alpha)) if count_alpha[i] == max(count_alpha)]
+if len(ans) > 1 : print("?")
+else: print(chr(count_alpha.index(max(count_alpha))+ord('A')))
+
+# 1157번 단어 공부 - short coding - 문자열 내에 포함된 문자는 set을 이용
+string = sys.stdin.readline().strip().upper()
+m=0
+for char in set(string):
+    c = string.count(char)
+    if c == m: out = '?'
+    elif c > m:
+        m, out = c, char
+print(out)
+
+
+# 2908번 상수
+import sys
+sys.stdin = open("a.txt", "r")
+a, b = map(str, sys.stdin.readline().split())
+c, d = int(a[::-1]), int(b[::-1])
+if c>d: sys.stdout.write(c)
+elif c<d: sys.stdout.write(d)
+
+
+# 5622번 다이얼
+string = input()
+d = {}
+d['A'] = d['B'] = d['C'] = 2
+d['D'] = d['E'] = d['F'] = 3
+d['G'] = d['H'] = d['I'] = 4
+d['J'] = d['K'] = d['L'] = 5
+d['M'] = d['N'] = d['O'] = 6
+d['P'] = d['Q'] = d['R'] = d['S'] = 7
+d['T'] = d['U'] = d['V'] = 8
+d['W'] = d['X'] = d['Y'] = d['Z'] = 9
+time = 0
+for char in string:
+    time += d[char]+ 1
+print(time)
+
+
+# 2941번 크로아티아 알파벳
+import sys
+# sys.stdin = open("a.txt", "r")
+string = sys.stdin.readline().strip()
+print(len(string)-string.count("c=")-string.count("c-")-string.count("dz=")-string.count("d-")-string.count("lj")-string.count("nj")-string.count("s=")-string.count("z="))
+
+# 2941번 길어지지 않게 하기 - map 사용
+import sys
+string = sys.stdin.readline().strip()
+print(len(string)-sum(map(string.count, ["c=","c-","dz=","d-","lj","nj","s=","z="])))
+
+
+# 1316번 그룹 단어 체커
+import sys
+# sys.stdin = open("a.txt", "r")
+n = int(sys.stdin.readline())
+i, count = 0, 0
+while i != n:
+    string = sys.stdin.readline().strip()
+    no = 0
+    for char in set(string):
+        if len(string)-string[::-1].find(char)-string.find(char) != string.count(char):
+            no = 1
+    if not no:
+        count +=1
+    i+=1
+print(count)
+
+# 좀 강력한 코드
+import sys
+# sys.stdin = open("a.txt", "r")
+n = int(sys.stdin.readline())
+i, count = 0, 0
+while i != n:
+    string = sys.stdin.readline().strip()
+    if list(string) == sorted(string, key=string.find):
+        count += 1
+    i+=1
+print(count)
