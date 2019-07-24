@@ -41,3 +41,31 @@ for i in range(n):
         ans = i
         break
 print(ans)
+
+
+# 7568번 덩치
+import sys
+# sys.stdin = open("a.txt", "r")
+
+def dungchi(a, b):
+    if a[0] > b[0] and a[1] > b[1]:
+        return 1
+    elif a[0] < b[0] and a[1] < b[1]:
+        return -1
+    else:
+        return 0
+
+n = int(sys.stdin.readline())
+a = []
+for i in range(n):
+    a.append(list(map(int, sys.stdin.readline().split())))
+
+big = [1]*n
+for i in range(n):
+    for j in range(i+1, n):
+        m = dungchi(a[i], a[j])
+        if m == 1:
+            big[j]+=1
+        elif m == -1:
+            big[i]+=1
+print(" ".join(str(i) for i in big))
