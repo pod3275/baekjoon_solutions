@@ -49,7 +49,7 @@ for idx, char in enumerate(string):
         answer[ord(char)-ord('a')] = idx
 print(" ".join(str(x) for x in answer))
 
-# 10809번 알파벳 찾기 - for문 len(string) - 최소 시간 달성 : range, enum은 메모리 비효율적임
+# 10809번 알파벳 찾기 - for문 len(string) - 최소 시간 달성
 answer = [-1 for i in range(26)]
 string = input()
 i = 0

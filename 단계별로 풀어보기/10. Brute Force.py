@@ -29,4 +29,15 @@ for i in range(n):
 print(ans)
 
 
-# 2231번 분해합
+# 2231번 분해합 - for가 그렇게 느리지는 않다.
+n = int(input())
+ans = 0
+for i in range(n):
+    gen = tmp = i
+    while tmp != 0:
+        gen+= tmp%10
+        tmp = tmp//10 # 원래는 int(tmp/10) 이엇는데, tmp//10으로 바꿀때 2100ms --> 1340ms
+    if gen == n:
+        ans = i
+        break
+print(ans)
