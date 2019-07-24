@@ -18,7 +18,7 @@ baekjoon solutions
   - *for char in set(string):*
   
 - 반복문 시 *range* 및 *enum*은 메모리 비효율적임
-  - for 대신 while 사용
+  - for 대신 while 사용 ---> 아니었음. python3에서 range를 list가 아니라 다르게 처리해서, 빠름.
   
 - *split* 함수에서 empty string + specified split --> return ['']
 
@@ -29,3 +29,6 @@ baekjoon solutions
   - 결과는 항상 낮->높. (내림차순은 *reverse=True*)
   - *a.sort()* : a를 sort하고 return은 없음. list만 가능.
   - *sorted(a, key=a.count)* : a를 key 기준으로 sort한 결과 return. a는 변하지 않음. list 및 string 가능.
+
+- *int(a/10)* == *a//10*
+  - 실행 시간 : (long) *int(a/10)* >> *a//10* (short)
