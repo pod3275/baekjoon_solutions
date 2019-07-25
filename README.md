@@ -34,4 +34,4 @@ baekjoon solutions
   - 실행 시간 : (long) *int(a/10)* >> *a//10* (short)
 
 - list, string의 [:::]
-  - *[a:b:c]* 의 의미 = a부터 b까지, c 간격으로 출력
+  - *[a : b : c]* 의 의미 = a부터 b까지, c 간격으로 출력
