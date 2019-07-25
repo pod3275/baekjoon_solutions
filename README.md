@@ -14,7 +14,7 @@ baekjoon solutions
 - 리스트 중복 제거
   - *a = list(set(a))*
   
-- 문자열에 나타나는 단어별로 보기
+- (중복 없이) 문자열에 나타나는 단어별로 보기
   - *for char in set(string):*
   
 - 반복문 시 *range* 및 *enum*은 메모리 비효율적임
@@ -32,3 +32,6 @@ baekjoon solutions
 
 - *int(a/10)* == *a//10*
   - 실행 시간 : (long) *int(a/10)* >> *a//10* (short)
+
+- list, string의 [:::]
+  - *[a:b:c]* 의 의미 = a부터 b까지, c 간격으로 출력
